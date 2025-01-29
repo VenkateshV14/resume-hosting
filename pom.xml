@@ -1,6 +1,5 @@
 <build>
   <plugins>
-    <!-- Maven Resources Plugin to copy HTML and JS files -->
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-resources-plugin</artifactId>
@@ -28,3 +27,4 @@
     </plugin>
   </plugins>
 </build>
+
