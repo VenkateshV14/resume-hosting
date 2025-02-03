@@ -59,6 +59,8 @@ clean package
 ```
 
 - Add a **Post-Build Step** to deploy the generated WAR file to Tomcat:
+- Install deploy to container plugin in Jenkins GUI.
+- Give the path of war file that has generated in this plugin.
 
 ## 🔥 How It Works
 1. Push updates to the GitHub repository.
