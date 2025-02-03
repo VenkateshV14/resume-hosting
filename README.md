@@ -80,7 +80,7 @@ clean package
 │   │   │   ├── pic.jpg     
 │   │   │   ├── WEB-INF/
 │   │   │   │   ├── web.xml  
-│   ├── pom.xml  
+├── pom.xml  
 ├── README.md        
 ```
 
