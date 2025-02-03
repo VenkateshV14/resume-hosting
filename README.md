@@ -26,19 +26,13 @@ This project sets up and configures a **Jenkins server** to automate the deploym
 ### 2️⃣ **Install & Configure Jenkins**
 ```sh
 # Install Java (required for Jenkins & Tomcat)
-sudo apt update && sudo apt install openjdk-17-jdk -y
 sudo wget -O /etc/yum.repos.d/jenkins.repo \
     https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 sudo yum upgrade
-# Add required dependencies for the jenkins package
 sudo yum install fontconfig java-17-openjdk
 sudo yum install jenkins
 sudo systemctl daemon-reload
-# Add Jenkins repository & install Jenkins
-wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian/jenkins.io.key
-sudo sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
-sudo apt update && sudo apt install jenkins -y
 
 # Start and enable Jenkins service
 sudo systemctl start jenkins
@@ -48,17 +42,12 @@ sudo systemctl enable jenkins
 ### 3️⃣ **Install & Configure Tomcat**
 ```sh
 # Install Tomcat
-sudo apt update && sudo apt install tomcat9 -y
-
-# Start and enable Tomcat
-sudo systemctl start tomcat9
-sudo systemctl enable tomcat9
-```
+Download tomcat using wget from https://tomcat.apache.org/download-90.cgi
 
 ### 4️⃣ **Configure Jenkins for GitHub Integration**
 - Install **GitHub Plugin** and **Maven Integration Plugin** in Jenkins.
-- Add **GitHub Webhook** to trigger builds.
 - Configure **Jenkins Maven Project** to build and deploy the resume.
+- Add **Poll SCM and '* * * * *'** to trigger builds everytime there's update in the code .
 
 ### 5️⃣ **Automate Deployment with Jenkins Maven Project**
 - In **Jenkins**, create a new **Maven Project**.
@@ -84,13 +73,13 @@ clean package
 ├── src/
 │   ├── main/
 │   │   ├── webapp/
-│   │   │   ├── index.html  # Resume webpage
-│   │   │   ├── style.css   # Stylesheet for resume
-│   │   │   ├── pic.jpg     # Profile picture
+│   │   │   ├── index.html  
+│   │   │   ├── style.css   
+│   │   │   ├── pic.jpg     
 │   │   │   ├── WEB-INF/
-│   │   │   │   ├── web.xml  # Deployment descriptor
-│   ├── pom.xml  # Maven build file
-├── README.md        # Project documentation
+│   │   │   │   ├── web.xml  
+│   ├── pom.xml  
+├── README.md        
 ```
 
 ## 📢 Future Enhancements
