@@ -1,7 +1,7 @@
-# Automated Resume Deployment with Jenkins & Tomcat
+# Automated Introduction and Resume Deployment with Jenkins & Tomcat
 
 ## 📌 Project Overview
-This project sets up and configures a **Jenkins server** to automate the deployment of my resume on a **Tomcat server**. Both servers are hosted on **AWS EC2 instances**. The pipeline ensures that whenever changes are pushed to the GitHub repository, Jenkins triggers an automated deployment to update the resume on the Tomcat server using a **Maven Project**.
+This project sets up and configures a **Jenkins server** to automate the deployment of my Introduction and resume on a **Tomcat server**. Both servers are hosted on **AWS EC2 instances**. The pipeline ensures that whenever changes are pushed to the GitHub repository, Jenkins triggers an automated deployment to update the resume on the Tomcat server using a **Maven Project**.
 
 ## 🚀 Features
 - **Automated CI/CD Pipeline**: Configured with Jenkins to deploy updates automatically.
@@ -77,7 +77,8 @@ clean package
 │   │   ├── webapp/
 │   │   │   ├── index.html  
 │   │   │   ├── style.css   
-│   │   │   ├── pic.jpg     
+│   │   │   ├── resume.png     
+│   │   │   ├── background.avif     
 │   │   │   ├── WEB-INF/
 │   │   │   │   ├── web.xml  
 ├── pom.xml  
